@@ -16,6 +16,8 @@ source:
 build:
   number: 0
   detect_binary_files_with_prefix: true
+  ignore_run_exports:  # [osx]
+    - libcxx  # [osx]
 
 requirements:
   build:
@@ -37,7 +39,7 @@ test:
     - test -f $PREFIX/lib/libdouble-conversion.dylib  # [osx]
 
 about:
-  home: http://github.com/google/double-conversion
+  home: https://github.com/google/double-conversion
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
