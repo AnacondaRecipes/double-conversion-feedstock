@@ -33,10 +33,13 @@ test:
     - {{ compiler('c') }}
   files:
     - test.cc
+    - test.sh
   commands:
     - test -f $PREFIX/lib/libdouble-conversion.a      # [unix]
     - test -f $PREFIX/lib/libdouble-conversion.so     # [linux]
     - test -f $PREFIX/lib/libdouble-conversion.dylib  # [osx]
+    - chmod +x test.sh  # [not win]
+    - ./test.sh
 
 about:
   home: https://github.com/google/double-conversion
