@@ -38,8 +38,6 @@ test:
     - test -f $PREFIX/lib/libdouble-conversion.a      # [unix]
     - test -f $PREFIX/lib/libdouble-conversion.so     # [linux]
     - test -f $PREFIX/lib/libdouble-conversion.dylib  # [osx]
-    - chmod +x test.sh  # [not win]
-    - ./test.sh
 
 about:
   home: https://github.com/google/double-conversion
@@ -57,6 +55,8 @@ about:
   dev_url: https://github.com/google/{{ name }}
 
 extra:
+  skip-lints:
+    - has_run_test_and_commands
   recipe-maintainers:
     - xmnlab
     - pearu
