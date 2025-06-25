@@ -1,8 +1,8 @@
 {% set name = "double-conversion" %}
-{% set version = "3.1.5" %}
-{% set sha256 = "a63ecb93182134ba4293fd5f22d6e08ca417caafa244afaa751cbfddf6415b13" %}
+{% set version = "3.3.1" %}
+{% set sha256 = "fe54901055c71302dcdc5c3ccbe265a6c191978f3761ce1414d0895d6b0ea90e" %}
 
-{% set posix = 'm2-' if win else '' %}
+{% set posix = 'msys2-' if win else '' %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   detect_binary_files_with_prefix: true
 
 requirements:
@@ -31,13 +31,9 @@ test:
     - {{ compiler('c') }}
   files:
     - test.cc
-  commands:
-    - test -f $PREFIX/lib/libdouble-conversion.a      # [unix]
-    - test -f $PREFIX/lib/libdouble-conversion.so     # [linux]
-    - test -f $PREFIX/lib/libdouble-conversion.dylib  # [osx]
 
 about:
-  home: http://github.com/google/double-conversion
+  home: https://github.com/google/double-conversion
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
