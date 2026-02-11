@@ -36,8 +36,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Efficient binary-decimal and decimal-binary conversion routines for IEEE doubles.'
-
+  summary: Efficient binary-decimal and decimal-binary conversion routines for IEEE doubles.
   description: |
     double-conversion provides binary-decimal and decimal-binary routines for IEEE doubles.
     The library consists of efficient conversion routines that have been extracted from
