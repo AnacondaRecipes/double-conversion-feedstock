@@ -9,12 +9,11 @@ else
 fi
 
 # Build shared lib
-cmake . \
+cmake ${CMAKE_ARGS} . \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_SHARED_LIBS=ON \
-    -DBUILD_TESTING=ON \
-    ${CMAKE_PLATFORM_FLAGS[@]}
+    -DBUILD_TESTING=ON
 make -j
 
 test/cctest/cctest --list | tr -d '<' | xargs test/cctest/cctest
@@ -22,11 +21,10 @@ test/cctest/cctest --list | tr -d '<' | xargs test/cctest/cctest
 make install
 
 # Build static lib
-cmake . \
+cmake ${CMAKE_ARGS} . \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_INSTALL_LIBDIR=lib \
   -DBUILD_SHARED_LIBS=OFF \
-  -DBUILD_TESTING=OFF \
-  ${CMAKE_PLATFORM_FLAGS[@]}
+  -DBUILD_TESTING=OFF
 make -j
 make install
