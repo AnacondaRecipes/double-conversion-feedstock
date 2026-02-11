@@ -9,6 +9,7 @@ cmake ${CMAKE_ARGS} . \
     -DBUILD_TESTING=ON
 make -j
 
+# Run test
 test/cctest/cctest --list | tr -d '<' | xargs test/cctest/cctest
 
 make install
