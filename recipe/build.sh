@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 declare -a CMAKE_PLATFORM_FLAGS
 if [[ ${HOST} =~ .*darwin.* ]]; then
