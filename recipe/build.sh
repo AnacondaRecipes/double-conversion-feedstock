@@ -1,11 +1,6 @@
 #!/bin/bash
 set -ex
 
-declare -a CMAKE_PLATFORM_FLAGS
-if [[ ${HOST} =~ .*darwin.* ]]; then
-  CMAKE_PLATFORM_FLAGS+=(-DCMAKE_OSX_SYSROOT="${CONDA_BUILD_SYSROOT}")
-fi
-
 # Build shared lib
 cmake ${CMAKE_ARGS} . \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
