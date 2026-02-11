@@ -22,6 +22,7 @@ requirements:
     - {{ posix }}make
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
   host:
 
 test:
