@@ -7,7 +7,7 @@ cmake ${CMAKE_ARGS} . \
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_SHARED_LIBS=ON \
     -DBUILD_TESTING=ON
-make -j
+make -j${CPU_COUNT}
 
 # Run test
 test/cctest/cctest --list | tr -d '<' | xargs test/cctest/cctest
@@ -20,5 +20,5 @@ cmake ${CMAKE_ARGS} . \
   -DCMAKE_INSTALL_LIBDIR=lib \
   -DBUILD_SHARED_LIBS=OFF \
   -DBUILD_TESTING=OFF
-make -j
+make -j${CPU_COUNT}
 make install
